@@ -1,0 +1,16 @@
+name: Trigger Playwright Tests
+
+on:
+  push:
+    branches: [main]  # O ajusta según tu rama principal
+
+jobs:
+  trigger-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger test run in VitmiTor/playwrightTS
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          repository: VitmiTor/playwrightTS
+          event-type: run-playwright-tests
