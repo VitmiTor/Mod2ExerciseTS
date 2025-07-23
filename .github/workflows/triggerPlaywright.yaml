@@ -11,6 +11,6 @@ jobs:
       - name: Trigger test run in VitmiTor/playwrightTS
         uses: peter-evans/repository-dispatch@v3
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GH_DISPATCH_TOKEN }}
           repository: VitmiTor/playwrightTS
           event-type: run-playwright-tests
